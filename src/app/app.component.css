@@ -1,0 +1,23 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  h1{
+    font-size: 50px;
+}
+
+.para{
+    font-size: x-large;
+    font-family: math;
+    line-height: normal;
+}
+
+.para1{
+    font-size: 20px;
+    font-family: math;
+}
+
+.landingPage{
+    margin: 60px 80px 40px 80px;
+    background-color: #e9ecef;
+}

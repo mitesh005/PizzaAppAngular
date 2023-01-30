@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Register User Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="registerUserForm">
+      <br>
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input matInput placeholder="Name" formControlName="userName">
+        </mat-form-field>
+        <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"  matInput type="password" placeholder="Password">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Email-ID</mat-label>
+            <input formControlName="email"  matInput type="email" placeholder="Email">
+          </mat-form-field>
+         <div mat-dialog-actions [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+            <button mat-raised-button color="primary" (click)="RegisterUser()">Save</button>
+
+         </div>
+        </form>
+</div>
+
