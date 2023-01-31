@@ -25,51 +25,14 @@ openDialogLogin() {
 
   }
   ngOnInit(): void {
-    if(localStorage.getItem("mycart")==undefined){
-      let name = (localStorage.getItem('name'))?.toString();
-      this.api.getAllFromCart(name).subscribe((res:any)=>{
-        let count=0;
-        res.forEach((element:any) => {
-          
-          count++;
-        });
-        let data:any=count;
-          let arr=JSON.parse(data);
-      this.cart=arr;
+    if(localStorage.getItem("mycart")!= undefined){
      
-      })
-
-     
-      //localStorage.getItem("mycart");
-      // let arr=JSON.parse(data);
-      // this.cart=arr.length;
-    }
-    else{
-    let data :any=  localStorage.getItem("mycart");
-    let name = (localStorage.getItem('name'))?.toString();
-    this.api.getAllFromCart(name).subscribe((res:any)=>{
-      let count=0;
-      res.forEach((element:any) => {
-        
-        count++;
-      });
+      let data:any=localStorage.getItem("mycart");
       let arr=JSON.parse(data);
-      if(arr.length<=0){
-        this.cart=count;
+      this.cart=arr.length;
+      
       }
-      else{
-        let temp= count;
-        console.log(temp)
-        this.cart=(arr.length);
-      }
-     
 
-    })
-    
-    }
-
-
-   
     this.api.Mysubject.subscribe((data:any)=>{
       this.cart = data.length;
     })

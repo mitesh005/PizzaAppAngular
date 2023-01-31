@@ -53,4 +53,8 @@ editProfile(data:any){
 getUserByName(username ?:string){
   return this.http.get(this.API_URL+'/GetUser?username='+username);
 }
+
+getcartCount(username ?:string){
+  return this.http.get(this.API_URL+'/GetCartCount?username='+username);
+}
 }

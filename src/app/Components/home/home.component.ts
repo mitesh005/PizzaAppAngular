@@ -21,6 +21,17 @@ constructor(private router:Router, private api:ApiService){
       this.productData=res;
     
     })
+    let name = (localStorage.getItem('name'))?.toString();
+    this.api.getcartCount(name).subscribe((res:any)=>{
+      let arr:any=[];
+      res.forEach((element:any) => {
+        arr.push(element);
+      });
+     
+      localStorage.setItem('mycart',JSON.stringify(arr));
+      this.api.storeInSubject(arr);
+    })
+    
   }
 
   AddCart(pimage:any,pname:any,price:any,id:any){
