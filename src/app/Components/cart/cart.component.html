@@ -5,10 +5,14 @@
   
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="fw-normal mb-0 text-black">Order Cart</h3>
-            
+           
           </div>
-  
+          <div *ngIf="viewcart == 0">
+            <img src="https://stories.freepiklabs.com/storage/18377/no-data-rafiki-1356.png" alt="noimage" style="margin-left:30%;height:300px;"
+            />
+          </div>
           <div class="card rounded-3 mb-4"  *ngFor="let item of viewcart; let i = index">
+          
             <div class="card-body p-4">
               <div class="row d-flex justify-content-between align-items-center">
                 <div class="col-md-2 col-lg-2 col-xl-2">
